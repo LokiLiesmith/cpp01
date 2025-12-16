@@ -6,7 +6,7 @@
 /*   By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 19:07:53 by mrazem            #+#    #+#             */
-/*   Updated: 2025/12/16 19:36:44 by mrazem           ###   ########.fr       */
+/*   Updated: 2025/12/16 20:48:11 by mrazem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Weapon
 		Weapon(std::string type);
 		~Weapon();
 		
-		std::string& getType() const;
+		const std::string& getType() const;
 		void setType(std::string type);
 };
 
