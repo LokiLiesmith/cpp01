@@ -1,0 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/12/16 19:04:01 by mrazem            #+#    #+#              #
+#    Updated: 2025/12/16 19:05:10 by mrazem           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CXX			:= c++
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
+
+SRC			:= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+NAME		:= violence
+OBJDIR		:= obj
+OBJ			:= $(SRC:%.c=$(OBJDIR)/%.o)
+
+
+all: $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
+	@$(CXX) $C(CXXFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
+
+# Clean rules
+clean:
+	rm -rf $(OBJDIR)
+
+fclean: clean
+	@rm -f $(NAME)
+	
+re: fclean all
+.PHONY: all clean fclean re

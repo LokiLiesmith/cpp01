@@ -5,22 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 19:05:58 by mrazem            #+#    #+#             */
-/*   Updated: 2025/12/16 19:06:07 by mrazem           ###   ########.fr       */
+/*   Created: 2025/12/16 19:06:22 by mrazem            #+#    #+#             */
+/*   Updated: 2025/12/16 19:36:42 by mrazem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-int main(void)
+int main()
 {
-	Zombie one("Brian");
-	one.announce();
 	
-	Zombie *two = newZombie("HeapBro");
-	two->announce();
-	delete two;
-
-	randomChump("StackBro");
-	return (0);
 }

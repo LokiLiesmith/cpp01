@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 19:05:58 by mrazem            #+#    #+#             */
-/*   Updated: 2025/12/16 19:06:07 by mrazem           ###   ########.fr       */
+/*   Created: 2025/12/16 19:07:53 by mrazem            #+#    #+#             */
+/*   Updated: 2025/12/16 19:36:44 by mrazem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main(void)
+# include <string>
+
+class Weapon
 {
-	Zombie one("Brian");
-	one.announce();
-	
-	Zombie *two = newZombie("HeapBro");
-	two->announce();
-	delete two;
+	private:
+		std::string _type;
 
-	randomChump("StackBro");
-	return (0);
-}
+	public:
+		// constructors
+		Weapon();
+		Weapon(std::string type);
+		~Weapon();
+		
+		std::string& getType() const;
+		void setType(std::string type);
+};
+
+#endif

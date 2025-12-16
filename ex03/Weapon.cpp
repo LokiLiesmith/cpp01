@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 19:05:58 by mrazem            #+#    #+#             */
-/*   Updated: 2025/12/16 19:06:07 by mrazem           ###   ########.fr       */
+/*   Created: 2025/12/16 19:19:57 by mrazem            #+#    #+#             */
+/*   Updated: 2025/12/16 19:36:43 by mrazem           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.h"
+#include "Weapon.hpp"
+#include <iostream>
 
-int main(void)
+Weapon::Weapon()
 {
-	Zombie one("Brian");
-	one.announce();
-	
-	Zombie *two = newZombie("HeapBro");
-	two->announce();
-	delete two;
 
-	randomChump("StackBro");
-	return (0);
+}
+Weapon::Weapon(std::string type)
+{
+	setType(type);
+	// _type = type;
+}
+Weapon::~Weapon()
+{
+	std::cout << "weapon destroyed" <<std::endl;
+}
+
+void Weapon::setType(std::string type)
+{
+	_type = type;
 }
