@@ -3,6 +3,11 @@
 
 # include <string>
 # include "Weapon.hpp"
+// Human A defines an invariant, which means the human A cant exist without a weapon
+// so a reference can only be encoded on creation which enforces is.
+
+// a pointer makes the weapon optional.
+
 class HumanA
 {
 	private:
@@ -11,7 +16,7 @@ class HumanA
 	
 	public:
 		HumanA(std::string name, Weapon& weapon);
-        ~HumanA();
+		~HumanA();
 
 		void attack();
 };
