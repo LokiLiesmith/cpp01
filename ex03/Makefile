@@ -21,8 +21,8 @@ OBJ			:= $(SRC:%.c=$(OBJDIR)/%.o)
 
 all: $(NAME)
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@echo "Compiled. \nrun with: ./$(NAME)"
 $(OBJDIR)/%.o: %.cpp | $(OBJDIR)
 	@$(CXX) $C(CXXFLAGS) -c $< -o $@
 
@@ -31,7 +31,7 @@ $(OBJDIR):
 
 # Clean rules
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
 	@rm -f $(NAME)
