@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mrazem <mrazem@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/16 19:04:01 by mrazem            #+#    #+#              #
-#    Updated: 2025/12/17 19:34:23 by mrazem           ###   ########.fr        #
+#    Created: 2025/12/17 19:33:14 by mrazem            #+#    #+#              #
+#    Updated: 2025/12/17 22:13:47 by mrazem           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX			:= c++
 CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
 
-SRC			:= main.cpp
-NAME		:= losers
+SRC			:= main.cpp Harl.cpp
+NAME		:= harl
 OBJDIR		:= obj
 OBJ			:= $(SRC:%.c=$(OBJDIR)/%.o)
 
@@ -32,7 +32,7 @@ $(OBJDIR):
 
 # Clean rules
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
 	@rm -f $(NAME)
